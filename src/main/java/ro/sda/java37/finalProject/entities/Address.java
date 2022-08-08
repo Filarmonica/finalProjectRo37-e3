@@ -8,10 +8,11 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Address {
-    String country;
-    String city;
-    String street;
-    int zipCode;
+    private Long id;
+    private String country;
+    private String city;
+    private String street;
+    private int zipCode;
 
 
 

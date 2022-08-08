@@ -4,12 +4,20 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-@AllArgsConstructor
 @Getter
 @Setter
 public class Category {
+    private Long id;
     private Category parentCategory;
     private ProductType subcategories;
+    public Category() {
+
+    }
+    public Category(Long id, Category parentCategory, ProductType subcategories) {
+        this.id = id;
+        this.parentCategory = parentCategory;
+        this.subcategories = subcategories;
+    }
 }
 
 
