@@ -4,12 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
+import javax.persistence.*;
 @AllArgsConstructor
 @Getter
 @Setter
@@ -19,8 +14,12 @@ import javax.persistence.Id;
 public class OrderLine {
     @Id
     @GeneratedValue
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "product_id", nullable = false)
     private Product product;
     private int numberOfProducts;
+    @ManyToOne
+    @JoinColumn(name = "price_id")
     private Product price;
 
 }

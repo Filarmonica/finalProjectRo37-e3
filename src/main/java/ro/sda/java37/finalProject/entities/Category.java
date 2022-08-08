@@ -1,23 +1,22 @@
 package ro.sda.java37.finalProject.entities;
 
-import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.*;
+@Entity
 @Getter
 @Setter
-public class Category {
-    private Long id;
-    private Category parentCategory;
-    private ProductType subcategories;
-    public Category() {
 
-    }
-    public Category(Long id, Category parentCategory, ProductType subcategories) {
-        this.id = id;
-        this.parentCategory = parentCategory;
-        this.subcategories = subcategories;
-    }
+public class Category {
+    @Id
+    @GeneratedValue
+    private Long id;
+    @ManyToOne
+    @JoinColumn(name = "parent_category_id")
+    private Category parentCategory;
+
 }
 
 

@@ -4,11 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
+import javax.persistence.*;
 @AllArgsConstructor
 @Getter
 @Setter
@@ -16,19 +12,20 @@ import javax.persistence.Id;
 @Entity
 @Data
 public class Product {
-
     @Id
     @GeneratedValue
     private Long id;
     private String title;
     private String description;
     private String thumbnail;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
     private Category category;
+
     private double price;
     private ProductType productType;
     private Brand brand;
+    public Product() {
 
-
-
-
+    }
 }

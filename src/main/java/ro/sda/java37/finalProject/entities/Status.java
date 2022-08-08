@@ -9,6 +9,4 @@ public enum Status {
     CANCELLED,
     REFUNDED,
     COMPLETED;
-
-
 }

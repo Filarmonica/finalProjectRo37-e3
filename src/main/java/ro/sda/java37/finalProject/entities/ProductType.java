@@ -8,5 +8,5 @@ public enum ProductType {
     JACKETS,
     UNDERWEAR,
     HATS,
-    ACCESSORIES
+    ACCESSORIES;
 }

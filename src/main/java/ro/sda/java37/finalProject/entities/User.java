@@ -4,12 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import ro.sda.java37.finalProject.dto.AddressDto;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
+import javax.persistence.*;
 @AllArgsConstructor
 @Getter
 @Setter
@@ -23,8 +18,14 @@ public class User{
     private String email;
     private String password;
     private String city;
-    private AddressDto address;
+    @ManyToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
+
     private boolean avatar;  //it has an avatar or not
     boolean role;  // it is admin or user
 
+    public User() {
+
+    }
 }
