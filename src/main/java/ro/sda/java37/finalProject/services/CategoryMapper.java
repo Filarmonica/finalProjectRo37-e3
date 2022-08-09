@@ -17,7 +17,6 @@ public class CategoryMapper implements Mapper<Category, CategoryDto> {
         CategoryDto categoryForm = new CategoryDto();
         categoryForm.setId(entity.getId());
         categoryForm.setParentCategory(entity.getParentCategory());
-        categoryForm.setSubcategories(entity.getSubcategories());
         return categoryForm;
     }
 
@@ -31,8 +30,6 @@ public class CategoryMapper implements Mapper<Category, CategoryDto> {
         }
         category.setId(dto.getId());
         category.setParentCategory(dto.getParentCategory());
-        category.setSubcategories(dto.getSubcategories());
-
         return category;
     }
 }
