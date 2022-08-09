@@ -20,7 +20,4 @@ public class User{
     private boolean avatar;  //it has an avatar or not
     boolean role;  // it is admin or user
 
-    public User() {
-
-    }
 }
