@@ -33,5 +33,7 @@ public class CategoryService {
     public void deleteById(long id) {
         categoryRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("Category with %s does not exist", id)));
         categoryRepository.deleteById(id);
+
+
     }
 }
