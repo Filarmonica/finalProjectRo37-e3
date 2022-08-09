@@ -1,6 +1,5 @@
 package ro.sda.java37.finalProject.entities;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 

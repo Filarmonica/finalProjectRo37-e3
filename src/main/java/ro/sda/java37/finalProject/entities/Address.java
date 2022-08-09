@@ -1,7 +1,5 @@
 package ro.sda.java37.finalProject.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,8 +19,4 @@ public class Address {
     private String street;
     private int zipCode;
 
-
-    public Address() {
-
-    }
 }

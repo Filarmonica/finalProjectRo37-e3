@@ -1,7 +1,5 @@
 package ro.sda.java37.finalProject.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
@@ -22,7 +20,4 @@ public class Product {
     private double price;
     private ProductType productType;
     private Brand brand;
-    public Product() {
-
-    }
 }
