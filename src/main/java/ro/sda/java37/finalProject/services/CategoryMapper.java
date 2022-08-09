@@ -30,6 +30,7 @@ public class CategoryMapper implements Mapper<Category, CategoryDto> {
         }
         category.setId(dto.getId());
         category.setParentCategory(dto.getParentCategory());
+
         return category;
     }
 }
