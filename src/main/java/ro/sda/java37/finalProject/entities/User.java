@@ -5,12 +5,9 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
-@AllArgsConstructor
+@Entity
 @Getter
 @Setter
-
-@Entity
-@Data
 public class User{
     @Id
     @GeneratedValue

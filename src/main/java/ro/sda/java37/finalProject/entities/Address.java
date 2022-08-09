@@ -9,12 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@AllArgsConstructor
+@Entity
 @Getter
 @Setter
-
-@Entity
-@Data
 public class Address {
     @Id
     @GeneratedValue
