@@ -9,8 +9,8 @@ import ro.sda.java37.finalProject.repository.ProductRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Service
 @AllArgsConstructor
+@Service
 public class ProductService {
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
@@ -26,12 +26,12 @@ public class ProductService {
     }
 
     public ProductDto findById(long id) {
-        Product entityCategory = productRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("Category with %s does not exist", id)));
+        Product entityCategory = productRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("Product with %s does not exist", id)));
         return productMapper.convertToDto(entityCategory);
     }
 
     public void deleteById(long id) {
-        productRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("Category with %s does not exist", id)));
+        productRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("Product with %s does not exist", id)));
         productRepository.deleteById(id);
     }
 }

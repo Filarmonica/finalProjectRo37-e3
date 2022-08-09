@@ -1,29 +1,28 @@
 package ro.sda.java37.finalProject.services;
 
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 import ro.sda.java37.finalProject.dto.OrderDto;
 import ro.sda.java37.finalProject.entities.Order;
 import ro.sda.java37.finalProject.exceptions.EntityNotFoundError;
 import ro.sda.java37.finalProject.repository.OrderRepository;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
+@AllArgsConstructor
+@Service
 public class OrderService {
     private final OrderRepository orderRepository;
     private final OrderMapper orderMapper;
-
-    public OrderService(OrderRepository orderRepository, OrderMapper orderMapper) {
-        this.orderRepository = orderRepository;
-        this.orderMapper = orderMapper;
-    }
 
     public List<OrderDto> findAllOrders() {
         return orderRepository.findAll().stream().map(order -> orderMapper.convertToDto(order)).collect(Collectors.toList());
     }
 
-    public void createOrder(OrderDto form) {
+    public OrderDto createOrder(OrderDto form) {
         Order order = orderMapper.convertToEntity(form);
         orderRepository.save(order);
+        return form;
     }
 
     public OrderDto findById(long id) {

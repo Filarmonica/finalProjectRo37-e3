@@ -13,7 +13,7 @@ public class OrderLineRestController {
     @Autowired
     private OrderLineService orderLineService;
     @GetMapping
-    public List<OrderLineDto> getAllBooks(){
+    public List<OrderLineDto> getAllOrderLines(){
         return orderLineService.findAllOrderLines();
 
     }

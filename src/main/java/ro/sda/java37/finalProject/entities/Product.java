@@ -17,7 +17,6 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
-
     private double price;
     private ProductType productType;
     private Brand brand;

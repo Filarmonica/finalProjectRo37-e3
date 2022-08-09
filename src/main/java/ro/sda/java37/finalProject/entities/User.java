@@ -14,7 +14,6 @@ public class User{
     private String password;
     private String city;
     private String address;
-    private boolean avatar;  //it has an avatar or not
-    boolean role;  // it is admin or user
-
+    private Boolean avatar;  //it has an avatar or not
+    private Boolean role;  // it is admin or user
 }

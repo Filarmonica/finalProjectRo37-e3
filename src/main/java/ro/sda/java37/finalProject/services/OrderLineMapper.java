@@ -1,21 +1,22 @@
 package ro.sda.java37.finalProject.services;
 
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 import ro.sda.java37.finalProject.dto.OrderLineDto;
-import ro.sda.java37.finalProject.entities.Order;
 import ro.sda.java37.finalProject.entities.OrderLine;
 import ro.sda.java37.finalProject.repository.OrderLineRepository;
 
+@AllArgsConstructor
+@Service
 public class OrderLineMapper implements Mapper<OrderLine, OrderLineDto> {
     private final OrderLineRepository orderLineRepository;
 
-    public OrderLineMapper(OrderLineRepository orderLineRepository) {
-        this.orderLineRepository = orderLineRepository;
-    }
-
     @Override
     public OrderLineDto convertToDto(OrderLine entity) {
-        OrderLine orderLineForm = new OrderLine();
-        orderLineForm.setId(entity.getId());
+        OrderLineDto orderLineForm = new OrderLineDto();
+        orderLineForm.setProduct(entity.getProduct());
+        orderLineForm.setNumberOfProducts(entity.getNumberOfProducts());
+        orderLineForm.setPrice(entity.getPrice());
         return orderLineForm;
     }
 
@@ -25,9 +26,12 @@ public class OrderLineMapper implements Mapper<OrderLine, OrderLineDto> {
         if (dto.getId() != null) {
             orderLine = orderLineRepository.findById(dto.getId()).orElse(new OrderLine());
         } else {
-            orderLine = new Order();
+            orderLine = new OrderLine();
         }
         orderLine.setId(dto.getId());
+        orderLine.setProduct(dto.getProduct());
+        orderLine.setNumberOfProducts(dto.getNumberOfProducts());
+        orderLine.setPrice(dto.getPrice());
         return orderLine;
     }
 }

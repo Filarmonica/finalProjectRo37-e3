@@ -1,18 +1,15 @@
 package ro.sda.java37.finalProject.services;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ro.sda.java37.finalProject.dto.ProductDto;
 import ro.sda.java37.finalProject.entities.Product;
 import ro.sda.java37.finalProject.repository.ProductRepository;
 
+@AllArgsConstructor
 @Service
 public class ProductMapper implements Mapper<Product, ProductDto> {
-
     private final ProductRepository productRepository;
-
-    public ProductMapper(ProductRepository categoryRepository) {
-        this.productRepository = categoryRepository;
-    }
 
     @Override
     public ProductDto convertToDto(Product entity) {
