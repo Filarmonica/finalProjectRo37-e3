@@ -2,12 +2,9 @@ package ro.sda.java37.finalProject.services;
 
 import ro.sda.java37.finalProject.dto.CategoryDto;
 import ro.sda.java37.finalProject.dto.UserDto;
-import ro.sda.java37.finalProject.entities.Category;
 import ro.sda.java37.finalProject.entities.User;
 import ro.sda.java37.finalProject.exceptions.EntityNotFoundError;
-import ro.sda.java37.finalProject.repository.CategoryRepository;
 import ro.sda.java37.finalProject.repository.UserRepository;
-
 import java.util.List;
 
 public class UserService {
@@ -35,8 +32,6 @@ public class UserService {
     public void deleteById(long id) {
         userRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("Category with %s does not exist", id)));
         userRepository.deleteById(id);
-
-
     }
 }
 

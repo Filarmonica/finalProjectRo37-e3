@@ -13,10 +13,7 @@ public class User{
     private String email;
     private String password;
     private String city;
-    @ManyToOne
-    @JoinColumn(name = "address_id")
-    private Address address;
-
+    private String address;
     private boolean avatar;  //it has an avatar or not
     boolean role;  // it is admin or user
 

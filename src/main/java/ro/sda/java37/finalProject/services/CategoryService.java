@@ -4,7 +4,6 @@ import ro.sda.java37.finalProject.dto.CategoryDto;
 import ro.sda.java37.finalProject.entities.Category;
 import ro.sda.java37.finalProject.exceptions.EntityNotFoundError;
 import ro.sda.java37.finalProject.repository.CategoryRepository;
-
 import java.util.List;
 
 public class CategoryService {
@@ -33,7 +32,5 @@ public class CategoryService {
     public void deleteById(long id) {
         categoryRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("Category with %s does not exist", id)));
         categoryRepository.deleteById(id);
-
-
     }
 }

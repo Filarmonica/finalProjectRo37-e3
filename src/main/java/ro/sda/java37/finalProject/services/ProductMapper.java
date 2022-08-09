@@ -1,9 +1,9 @@
 package ro.sda.java37.finalProject.services;
+
 import org.springframework.stereotype.Service;
 import ro.sda.java37.finalProject.dto.ProductDto;
 import ro.sda.java37.finalProject.entities.Product;
 import ro.sda.java37.finalProject.repository.ProductRepository;
-
 
 @Service
 public class ProductMapper implements Mapper<Product, ProductDto> {
@@ -30,9 +30,9 @@ public class ProductMapper implements Mapper<Product, ProductDto> {
     @Override
     public Product convertToEntity(ProductDto dto) {
         Product product;
-        if (dto.getId() != null) { // din baza de date aducem o entitate sa lucram cu ea
+        if (dto.getId() != null) {
             product = productRepository.findById(dto.getId()).orElse(new Product());
-        } else { // altfel se va creea alta
+        } else {
             product = new Product();
         }
         product.setId(dto.getId());
@@ -42,7 +42,6 @@ public class ProductMapper implements Mapper<Product, ProductDto> {
         product.setPrice(dto.getPrice());
         product.setProductType(dto.getProductType());
         product.getBrand();
-
         return product;
     }
 }

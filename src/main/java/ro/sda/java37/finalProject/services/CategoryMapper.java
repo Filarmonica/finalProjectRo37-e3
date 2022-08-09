@@ -23,9 +23,9 @@ public class CategoryMapper implements Mapper<Category, CategoryDto> {
     @Override
     public Category convertToEntity(CategoryDto dto) {
         Category category;
-        if (dto.getId() != null) { // din baza de date aducem o entitate sa lucram cu ea
+        if (dto.getId() != null) {
             category = categoryRepository.findById(dto.getId()).orElse(new Category());
-        } else { // altfel se va creea alta
+        } else {
             category = new Category();
         }
         category.setId(dto.getId());

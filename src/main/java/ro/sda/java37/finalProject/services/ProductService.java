@@ -6,16 +6,14 @@ import ro.sda.java37.finalProject.dto.ProductDto;
 import ro.sda.java37.finalProject.entities.Product;
 import ro.sda.java37.finalProject.exceptions.EntityNotFoundError;
 import ro.sda.java37.finalProject.repository.ProductRepository;
-
-
 import java.util.List;
 import java.util.stream.Collectors;
+
 @Service
 @AllArgsConstructor
 public class ProductService {
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
-
 
     public List<ProductDto> findAllProducts() {
         return productRepository.findAll().stream().map(product -> productMapper.convertToDto(product)).collect(Collectors.toList());

@@ -2,7 +2,6 @@ package ro.sda.java37.finalProject.entities;
 
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +21,6 @@ public class Category {
     private List<Category> subCategories = new ArrayList<>();
     String name;
     String description;
-
 }
 
 
