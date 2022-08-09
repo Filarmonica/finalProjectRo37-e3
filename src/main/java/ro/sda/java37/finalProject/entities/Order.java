@@ -20,5 +20,8 @@ public class Order {
     @JoinColumn
     private OrderLine orderLine;
     private Status status;
+    @ManyToOne
+    @JoinColumn(name = "user_client_id")
+    private User userClient;
 
 }

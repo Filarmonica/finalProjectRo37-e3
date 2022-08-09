@@ -16,7 +16,7 @@ public class CategoryService {
         this.categoryMapper = categoryMapper;
     }
 
-    public List<Category> findAll() {
+    public List<Category> findAllCategories() {
         return categoryRepository.findAll();
     }
 
