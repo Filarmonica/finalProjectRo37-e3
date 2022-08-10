@@ -3,11 +3,14 @@ package ro.sda.java37.finalProject.entities;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
+@Table(name = "orders")
 public class Order {
     @Id
     @GeneratedValue
@@ -17,12 +20,10 @@ public class Order {
     private String deliveryAddress;
     private String userAddress;
     private Date dateOfSubmission; // TBD
-    @ManyToOne
-    @JoinColumn
-    private OrderLine orderLine;
+    @OneToMany(mappedBy = "order")
+    private List<OrderLine> orderLine = new ArrayList<>();
     private Status status;
     @ManyToOne
-    @JoinColumn(name = "user_client_id")
-    private User userClient;
+    private User user;
 
 }

@@ -12,10 +12,10 @@ public class OrderLine {
     @GeneratedValue
     private Long id;
     @ManyToOne(optional = false)
-    @JoinColumn(name = "product_id", nullable = false)
+    @JoinColumn(nullable = false)
     private Product product;
     private int numberOfProducts;
-    @ManyToOne
-    @JoinColumn(name = "price_id")
-    private Product price;
+    private Double price;
+    @ManyToOne()
+    private Order order;
 }

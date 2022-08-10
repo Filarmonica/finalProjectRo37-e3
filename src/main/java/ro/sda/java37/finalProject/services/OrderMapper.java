@@ -20,9 +20,9 @@ public class OrderMapper implements Mapper<Order, OrderDto> {
         orderForm.setDeliveryAddress(entity.getDeliveryAddress());
         orderForm.setUserAddress(entity.getUserAddress());
         orderForm.setDateOfSubmission(entity.getDateOfSubmission());
-        orderForm.setOrderLine(entity.getOrderLine());
+//        orderForm.setOrderLine(entity.getOrderLine());
         orderForm.setStatus(entity.getStatus());
-        orderForm.setUserClient(entity.getUserClient());
+        orderForm.setUserClient(entity.getUser());
         return orderForm;
     }
 
@@ -40,9 +40,9 @@ public class OrderMapper implements Mapper<Order, OrderDto> {
         order.setDeliveryAddress(dto.getDeliveryAddress());
         order.setUserAddress(dto.getUserAddress());
         order.setDateOfSubmission(dto.getDateOfSubmission());
-        order.setOrderLine(dto.getOrderLine());
+//        order.setOrderLine(dto.getOrderLine());
         order.setStatus(dto.getStatus());
-        order.setUserClient(dto.getUserClient());
+        order.setUser(dto.getUserClient());
         return order;
     }
 }
