@@ -1,6 +1,7 @@
 package ro.sda.java37.finalProject.services;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 import ro.sda.java37.finalProject.dto.UserDto;
 import ro.sda.java37.finalProject.entities.User;
@@ -15,7 +16,8 @@ public class UserService {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
 
-    public List<UserDto> findAllUsers() {
+
+  public List<UserDto> findAllUsers() {
         return userRepository.findAll().stream().map(user -> userMapper.convertToDto(user)).collect(Collectors.toList());
     }
 
