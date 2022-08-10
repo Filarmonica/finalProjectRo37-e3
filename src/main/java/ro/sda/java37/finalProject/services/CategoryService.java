@@ -22,7 +22,7 @@ public class CategoryService {
     public CategoryDto createCategory(CategoryDto form) {
         Category category = categoryMapper.convertToEntity(form);
         categoryRepository.save(category);
-        return form;
+        return categoryMapper.convertToDto(category);
     }
 
     public CategoryDto findById(long id) {

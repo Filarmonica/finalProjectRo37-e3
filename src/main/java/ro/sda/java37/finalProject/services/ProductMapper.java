@@ -38,7 +38,7 @@ public class ProductMapper implements Mapper<Product, ProductDto> {
         product.setCategory(dto.getCategory());
         product.setPrice(dto.getPrice());
         product.setProductType(dto.getProductType());
-        product.getBrand();
+        product.setBrand(dto.getBrand());
         return product;
     }
 }
