@@ -22,7 +22,7 @@ public class OrderLineService {
     public OrderLineDto createOrderLine(OrderLineDto form) {
         OrderLine orderLine = orderLineMapper.convertToEntity(form);
         orderLineRepository.save(orderLine);
-        return form;
+        return orderLineMapper.convertToDto(orderLine);
     }
 
     public OrderLineDto findById(long id) {

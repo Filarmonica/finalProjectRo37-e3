@@ -22,7 +22,7 @@ public class OrderService {
     public OrderDto createOrder(OrderDto form) {
         Order order = orderMapper.convertToEntity(form);
         orderRepository.save(order);
-        return form;
+        return orderMapper.convertToDto(order);
     }
 
     public OrderDto findById(long id) {

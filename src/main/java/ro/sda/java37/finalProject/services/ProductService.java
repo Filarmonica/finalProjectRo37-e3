@@ -22,7 +22,7 @@ public class ProductService {
     public ProductDto createProduct(ProductDto form) {
         Product product = productMapper.convertToEntity(form);
         productRepository.save(product);
-        return form;
+        return productMapper.convertToDto(product);
     }
 
     public ProductDto findById(long id) {

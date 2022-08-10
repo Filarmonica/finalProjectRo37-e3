@@ -22,7 +22,7 @@ public class UserService {
     public UserDto createUser(UserDto form) {
         User user = userMapper.convertToEntity(form);
         userRepository.save(user);
-        return form;
+        return userMapper.convertToDto(user);
     }
 
     public UserDto findById(long id) {
