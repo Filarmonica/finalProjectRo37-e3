@@ -1,4 +1,4 @@
-package ro.sda.java37.finalProject.entities;
+package ro.sda.java37.finalProject.enums;
 
 public enum Brand {
     ZARA,
