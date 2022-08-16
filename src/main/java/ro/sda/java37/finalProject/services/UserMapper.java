@@ -14,6 +14,8 @@ public class UserMapper implements Mapper<User, UserDto> {
   @Override
   public UserDto convertToDto(User entity) {
     UserDto userForm = new UserDto();
+    userForm.setFirstName(entity.getFirstName());
+    userForm.setLastName(entity.getLastName());
     userForm.setId(entity.getId());
     userForm.setEmail(entity.getEmail());
     userForm.setPassword(entity.getPassword());
@@ -33,6 +35,8 @@ public class UserMapper implements Mapper<User, UserDto> {
       user = new User();
     }
     user.setId(dto.getId());
+    user.setFirstName(user.getFirstName());
+    user.setLastName(user.getLastName());
     user.setEmail(dto.getEmail());
     user.setPassword(dto.getPassword());
     user.setCity(dto.getCity());

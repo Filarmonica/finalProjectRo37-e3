@@ -15,12 +15,13 @@ public class ProductMapper implements Mapper<Product, ProductDto> {
   public ProductDto convertToDto(Product entity) {
     ProductDto productForm = new ProductDto();
     productForm.setId(entity.getId());
+    productForm.setName(entity.getName());
     productForm.setDescription(entity.getDescription());
     productForm.setThumbnail(entity.getThumbnail());
     productForm.setCategory(entity.getCategory());
     productForm.setPrice(entity.getPrice());
     productForm.setProductType(entity.getProductType());
-    productForm.getBrand();
+    productForm.setBrand(entity.getBrand());
     return productForm;
   }
 
@@ -33,6 +34,7 @@ public class ProductMapper implements Mapper<Product, ProductDto> {
       product = new Product();
     }
     product.setId(dto.getId());
+    product.setName(dto.getName());
     product.setDescription(dto.getDescription());
     product.setThumbnail(dto.getThumbnail());
     product.setCategory(dto.getCategory());
