@@ -26,10 +26,10 @@ public class OrderLineService {
     return orderLineMapper.convertToDto(orderLine);
   }
 
-  public OrderLineDto findById(long id) {
-    OrderLine entityOrderLine = orderLineRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("OrderLine with %s does not exist", id)));
-    return orderLineMapper.convertToDto(entityOrderLine);
-  }
+//  public OrderLineDto findById(long id) {
+//    OrderLine entityOrderLine = orderLineRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("OrderLine with %s does not exist", id)));
+//    return orderLineMapper.convertToDto(entityOrderLine);
+//  }
 
   public void deleteById(long id) {
     orderLineRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("OrderLine with %s does not exist", id)));

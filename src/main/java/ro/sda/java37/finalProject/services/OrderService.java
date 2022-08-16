@@ -27,10 +27,10 @@ public class OrderService {
     return orderMapper.convertToDto(order);
   }
 
-  public OrderDto findById(long id) {
-    Order entityOrder = orderRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("Order with %s does not exist", id)));
-    return orderMapper.convertToDto(entityOrder);
-  }
+//  public OrderDto findById(long id) {
+//    Order entityOrder = orderRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("Order with %s does not exist", id)));
+//    return orderMapper.convertToDto(entityOrder);
+//  }
 
   public void deleteById(long id) {
     orderRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("Order with %s does not exist", id)));

@@ -26,10 +26,10 @@ public class CategoryService {
     return categoryMapper.convertToDto(category);
   }
 
-  public CategoryDto findById(Long id) {
-    Category entityCategory = categoryRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("Category with %s does not exist", id)));
-    return categoryMapper.convertToDto(entityCategory);
-  }
+//  public CategoryDto findById(Long id) {
+//    Category entityCategory = categoryRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("Category with %s does not exist", id)));
+//    return categoryMapper.convertToDto(entityCategory);
+//  }
 
   public void deleteById(Long id) {
     categoryRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("Category with %s does not exist", id)));

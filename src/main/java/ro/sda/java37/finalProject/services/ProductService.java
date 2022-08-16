@@ -26,10 +26,10 @@ public class ProductService {
     return productMapper.convertToDto(product);
   }
 
-  public ProductDto findById(long id) {
-    Product entityCategory = productRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("Product with %s does not exist", id)));
-    return productMapper.convertToDto(entityCategory);
-  }
+//  public ProductDto findById(long id) {
+//    Product entityCategory = productRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("Product with %s does not exist", id)));
+//    return productMapper.convertToDto(entityCategory);
+//  }
 
   public void deleteById(long id) {
     productRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("Product with %s does not exist", id)));
@@ -39,7 +39,7 @@ public class ProductService {
   public void updateById(Long id, ProductDto productDto) {
     Product entity = productRepository.findById(id).orElseThrow(() -> new EntityNotFoundError(String.format("Product with %s does not exist", id)));
     entity.setId(productDto.getId());
-    entity.setTitle(productDto.getTitle());
+    entity.setName(productDto.getName());
     entity.setDescription(productDto.getDescription());
     entity.setThumbnail(productDto.getThumbnail());
     entity.setCategory(productDto.getCategory());
