@@ -31,9 +31,5 @@ public class User {
   private Boolean avatar;  //it has an avatar or not
   private UserRole role;
 
-//  @Override
-//  public Collection<? extends GrantedAuthority> getAuthorities() {
-//    SimpleGrantedAuthority authority = new SimpleGrantedAuthority(role.name());
-//    return Collections.singletonList(authority);
-//  }
+
 }
